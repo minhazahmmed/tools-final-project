@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>IIUC</title>
+  <link rel="stylesheet" href="styles.css">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Bungee+Spice&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Login/Signup Section -->
+  <div id="auth-section" class="center">
+    <div class="auth-box">
+      <div class="auth-toggle">
+        <button id="show-login" class="toggle-btn active">Log In</button>
+        <button id="show-signup" class="toggle-btn">Sign Up</button>
+      </div>
+      <!-- Login -->
+      <form id="login-form" autocomplete="off">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="main-btn">Log In</button>
+      </form>
+      <!-- Signup -->
+      <form id="signup-form" class="hidden" autocomplete="off">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="main-btn second">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  <!-- Dashboard -->
+  <div id="dashboard-section" class="center hidden">
+    <div class="dash-profile">
+      <img src="assets/Minhaz Ahmmed.jpg" alt="Profile" class="dash-avatar">
+      <h3 id="dashboard-name">Username</h3>
+      <p>Email: <span id="dashboard-email"></span></p>
+      <button id="logout-btn" class="main-btn logout">Log Out</button>
+    </div>
+  </div>
+  <!-- Main Page -->
+  <div id="main-section" class="hidden">
+    <nav class="navbar">
+      <span class="logo" id="fos">Foundation of Science</span>
+      <div class="nav-profile">
+        <img src="assets/Minhaz Ahmmed.jpg" id="profile-icon" class="profile-icon" alt="Profile">
+        <div id="profile-menu" class="profile-menu hidden">
+          <img src="assets/Minhaz Ahmmed.jpg" class="profile-avatar" alt="Profile">
+          <div id="profile-name" class="profile-name">Username</div>
+          <div id="profile-email" class="profile-mail">user@example.com</div>
+          <button id="navbar-logout" class="main-btn logout">Log Out</button>
+        </div>
+      </div>
+    </nav>
+    <!-- YouTube Cards -->
+    <div class="card-container">
+     <div class="video-card" onclick="window.open('https://www.youtube.com/playlist?list=PLgN8PZO_LOApacR-kpflSkYcYGne5-uIM','_blank')">
+  <img src="assets/studio_square_thumbnail.jpg" alt="Math Class">
+  <div class="card-title">HTML Full Playlist</div>
+</div>
+
+      <div class="video-card" onclick="window.open('https://www.youtube.com/playlist?list=PLgN8PZO_LOAoiRpLDE4R2f_kkoX4b0HoZ','_blank')">
+        <img src="assets/studio_square_thumbnail (1).jpg" alt="Video 2">
+        <div class="card-title">Higher Math MCQ Shortcut</div>
+      </div>
+      <div class="video-card" onclick="window.open('https://www.youtube.com/playlist?list=PLgN8PZO_LOAoZ9zqGSikKfzd0AAtOzpGG','_blank')">
+        <img src="assets/hqdefault.jpg" alt="Video 3">
+        <div class="card-title">Number System Calculator Hacks</div>
+      </div>
+      <div class="video-card" onclick="window.open('https://www.youtube.com/playlist?list=PLgN8PZO_LOAr8eTAyWW4iYrJoKmKyzIZQ','_blank')">
+        <img src="assets/hqdefault (1).jpg" alt="Video 4">
+        <div class="card-title">Number System Full playlist</div>
+      </div>
+      <div class="video-card" onclick="window.open('https://www.youtube.com/playlist?list=PLgN8PZO_LOAqAFv2PMUgqv8c59dZ6b4nH','_blank')">
+        <img src="assets/hqdefault (2).jpg" alt="Video 5">
+        <div class="card-title">Project video</div>
+      </div>
+      <div class="video-card" onclick="window.open('https://www.youtube.com/playlist?list=PLgN8PZO_LOApe41I96upmNsfjmJEHflih','_blank')">
+        <img src="assets/studio_square_thumbnail (2).jpg" alt="Video 6">
+        <div class="card-title">Statistics Course</div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <!-- JS for Behavior -->
+  <script>
+    // Switch between forms
+    const loginF = document.getElementById('login-form');
+    const signupF = document.getElementById('signup-form');
+    document.getElementById('show-login').onclick = () => {
+      signupF.classList.add('hidden');
+      loginF.classList.remove('hidden');
+      document.getElementById('show-login').classList.add('active');
+      document.getElementById('show-signup').classList.remove('active');
+    };
+    document.getElementById('show-signup').onclick = () => {
+      loginF.classList.add('hidden');
+      signupF.classList.remove('hidden');
+      document.getElementById('show-signup').classList.add('active');
+      document.getElementById('show-login').classList.remove('active');
+    };
+    // Fake login/signup progression
+    loginF.onsubmit = function(e){
+      e.preventDefault();
+      const email = loginF.querySelector('input[type="email"]').value;
+      document.getElementById('dashboard-name').textContent = email.split('@')[0];
+      document.getElementById('dashboard-email').textContent = email;
+      document.getElementById('profile-name').textContent = email.split('@')[0];
+      document.getElementById('profile-email').textContent = email;
+      showOnly('dashboard-section');
+      setTimeout(() => showOnly('main-section'), 1000);
+    };
+    signupF.onsubmit = function(e){
+      e.preventDefault();
+      const name = signupF.querySelector('input[type="text"]').value;
+      const email = signupF.querySelector('input[type="email"]').value;
+      document.getElementById('dashboard-name').textContent = name;
+      document.getElementById('dashboard-email').textContent = email;
+      document.getElementById('profile-name').textContent = name;
+      document.getElementById('profile-email').textContent = email;
+      showOnly('dashboard-section');
+      setTimeout(() => showOnly('main-section'), 1000);
+    };
+    // Logout everywhere
+    document.getElementById('logout-btn').onclick = () => showOnly('auth-section');
+    document.getElementById('navbar-logout').onclick = () => showOnly('auth-section');
+    // Profile menu
+    const profIcon = document.getElementById('profile-icon');
+    const profMenu = document.getElementById('profile-menu');
+    profIcon.onclick = e => {
+      e.stopPropagation();
+      profMenu.classList.toggle('hidden');
+    };
+    document.body.onclick = () => profMenu.classList.add('hidden');
+    profMenu.onclick = e => e.stopPropagation();
+    // Show only the given section
+    function showOnly(id){
+      ['auth-section','dashboard-section','main-section'].forEach(sec => {
+        document.getElementById(sec).classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
