@@ -29,11 +29,14 @@ background-image: linear-gradient(#E6E6FA, #B8E7FA);
 }
 .center {
   background-image: url("assets/Add\ a\ heading\ \(2\).png");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
+
 @keyframes fadeIn {
   from{transform: translateY(32px); opacity:0;}
   to{transform: none; opacity:1;}
@@ -78,7 +81,7 @@ input:focus {
 }
 .main-btn {
   margin-top: 0.5em;
-  padding: 0.8em;
+  padding: 10px 26px;
   background: brown;
   color: white;
   border: none;
@@ -156,12 +159,15 @@ input:focus {
   cursor: pointer;
   transition: box-shadow .18s;
 }
-.profile-icon:hover {box-shadow: 0 0 6px #13c7bb66;}
+.profile-icon:hover {
+  box-shadow: 0 0 6px #13c7bb66;
+}
 .profile-menu {
+  width: 300px;
   position: absolute;
-  top: 54px;
-  right: 0;
-  width: 225px;
+  top: 70px;
+  right: -24px;
+  width: 277px;
   background: #fff;
   border-radius: 1em;
   box-shadow: 0 2px 18px #0003;
@@ -193,11 +199,14 @@ input:focus {
 /* Cards */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 2em;
+  /* grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); */
+ grid-template-columns: repeat(3, 250px);
+ margin-left: 70px;
+   gap: 2em;
   padding: 3em 4vw;
 }
 .video-card {
+  
   background: #fff;
   border-radius: 1.2em;
   overflow: hidden;
